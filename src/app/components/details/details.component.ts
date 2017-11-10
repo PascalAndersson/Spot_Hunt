@@ -4,7 +4,6 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-details',
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.css'],
-  encapsulation: ViewEncapsulation.None
 })
 export class DetailsComponent implements OnInit {
 
