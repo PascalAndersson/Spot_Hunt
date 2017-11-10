@@ -1,6 +1,7 @@
 // External libs / components. -> @NgModule imports
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AngularFireModule } from 'angularfire2';
@@ -38,6 +39,7 @@ const appRouts = [
   ],
   imports: [
     BrowserModule,
+    NgbModule.forRoot(),
     RouterModule.forRoot(appRouts),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
