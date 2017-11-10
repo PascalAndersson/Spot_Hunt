@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-add',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddComponent implements OnInit {
 
+  addSpotFormGroup = new FormGroup({
+    name: new FormControl(),
+    description: new FormControl()
+  })
+
   constructor() { }
 
   ngOnInit() {
   }
-
+ 
 }
