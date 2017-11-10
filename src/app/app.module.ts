@@ -14,6 +14,7 @@ import { BrowseComponent } from './components/browse/browse.component';
 import { HomeComponent } from './components/home/home.component';
 import { AddComponent } from './components/add/add.component';
 import { DetailsComponent } from './components/details/details.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 
 // Services. -> @NgModule providers
@@ -32,7 +33,8 @@ const appRouts = [
     BrowseComponent,
     HomeComponent,
     AddComponent,
-    DetailsComponent
+    DetailsComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
