@@ -41,6 +41,7 @@ const appRouts = [
     BrowserModule,
     NgbModule.forRoot(),
     RouterModule.forRoot(appRouts),
+    ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule
