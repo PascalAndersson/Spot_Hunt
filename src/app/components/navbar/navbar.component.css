@@ -36,16 +36,16 @@ margin-right: 2em;
 }
 
 .notOrange:hover{
-    background-color: #ddd;
-    color: black;
+    color:#D55B1B;
 }
 
 .orange{
     border:solid #b8b8b8 1px;
-    background-color: rgb(214, 93, 0);
+    background-color: #D55B1B;
     color: white;
+    cursor: pointer;
 }
 
 .orange:hover{
-    background-color: rgb(163, 71, 0);
+    background-color: #D55B1B;
 }

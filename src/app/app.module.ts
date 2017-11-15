@@ -17,6 +17,11 @@ import { AddComponent } from './components/add/add.component';
 import { DetailsComponent } from './components/details/details.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 
+// Google maps
+import { AgmCoreModule } from '@agm/core';
+
+// Read JSON
+import { HttpModule } from '@angular/http';
 
 // Services. -> @NgModule providers
 import { DbService } from './services/db.service';
@@ -43,7 +48,11 @@ const appRouts = [
     RouterModule.forRoot(appRouts),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    HttpModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBLa5xPtfsWZK_ZNROM9e6hvQ3mkNrbTzQ'
+    })
   ],
   providers: [
     DbService
