@@ -1,18 +1,18 @@
 <!-- <div class="map"> -->
 <!-- <div class="flex-container"> -->
-    <div class="wrapper">
-        <agm-map [latitude]="lat" [styles]="style" [longitude]="lng" [zoom]="zoom" [disableDefaultUI]=false (mapClick)="mapClicked($event)">
-            <agm-marker *ngFor="let m of markers; let i = index" (markerClick)="clickedMarker(m, i)" [iconUrl]="icon" [latitude]="m.lat"
-                [longitude]="m.lng" [markerDraggable]="m.draggable" (dragEnd)="markerDragEnd(m, $event)">
+<div class="wrapper">
+    <agm-map [latitude]="lat" [styles]="style" [longitude]="lng" [zoom]="zoom" [disableDefaultUI]=false (mapClick)="mapClicked($event)">
+        <agm-marker *ngFor="let m of markers; let i = index" (markerClick)="clickedMarker(m, i)" [iconUrl]="icon" [latitude]="m.lat"
+            [longitude]="m.lng" [markerDraggable]="m.draggable" (dragEnd)="markerDragEnd(m, $event)">
 
-                <agm-info-window>
-                    {{m.name}}
-                </agm-info-window>
+            <agm-info-window>
+                {{m.name}}
+            </agm-info-window>
 
-            </agm-marker>
-        </agm-map>
-        <div class="searchbar"></div>
-        <div class="filter"></div>
-    </div>
+        </agm-marker>
+    </agm-map>
+    <div class="searchbar"></div>
+    <!-- <div class="filter"></div> -->
+</div>
 <!-- </div> -->
 <!-- </div> -->
