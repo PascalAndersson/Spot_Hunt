@@ -11,10 +11,10 @@ import { Http } from '@angular/http';
 export class HomeComponent {
 
   //Read data from json file containing design for google map
-  constructor(private http: Http) {
-    this.http.get('assets/google-maps-design.json')
-      .subscribe(res => this.style = res.json());
-  }
+    constructor(private http: Http) {
+      this.http.get('assets/google-maps-design.json')
+        .subscribe(res => this.style = res.json());
+    }
 
   //Set starting position and zoom level
   zoom: number = 12;
