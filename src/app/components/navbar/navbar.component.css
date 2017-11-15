@@ -41,11 +41,13 @@ margin-right: 2em;
 
 .orange{
     border:solid #b8b8b8 1px;
+    color:white;
     background-color: #D55B1B;
-    color: white;
-    cursor: pointer;
+    margin-right: 4em;
+    transition: 0.2s;
 }
 
 .orange:hover{
-    background-color: #D55B1B;
+    color:#D55B1B;
+    background-color: white;
 }

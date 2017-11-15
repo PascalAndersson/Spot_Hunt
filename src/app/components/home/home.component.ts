@@ -17,7 +17,7 @@ export class HomeComponent {
   }
 
   //Set starting position and zoom level
-  zoom: number = 10;
+  zoom: number = 12;
   lat: number = 59.315305976994274;
   lng: number = 18.079376220703125;
 
@@ -27,10 +27,10 @@ export class HomeComponent {
 
   // Set the image and properties of the google maps marker
   icon: object = {
-    url: 'https://vignette.wikia.nocookie.net/zombie/images/1/1d/Skateboard-0.jpg/revision/latest?cb=20150924103844', // gives a data://<value>
+    url: 'assets/SpotHuntPin.png', // gives a data://<value>
     scaledSize: {
-      height: 40,
-      width: 40
+      height: 30,
+      width: 30
     }
   }
 
@@ -70,6 +70,7 @@ export class HomeComponent {
       draggable: true
     }
 
+    console.log(newMarker);
     this.markers.push(newMarker);
   }
 
