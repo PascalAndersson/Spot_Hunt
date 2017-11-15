@@ -16,9 +16,11 @@ export class AddComponent implements OnInit {
   addSpotFormGroup = new FormGroup({
     name: new FormControl(),
     description: new FormControl(),
-    categories: new FormArray([
-      
-    ])
+    curbs: new FormControl(false),
+    rails: new FormControl(false),
+    stairs: new FormControl(false),
+    plaza: new FormControl(false),
+    transition: new FormControl(false)
   });
 
   newSpot: any;

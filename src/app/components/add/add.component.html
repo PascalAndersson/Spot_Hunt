@@ -18,12 +18,18 @@
                         <button class="btn buttonDesign">Select position</button>
                     </div>
                 </div>
+                <label>Category</label>
                 <div class="row">
-                    <div class="form-check">
-                        <label class="form-check-label">Category<br>
-                            <input type="checkbox" class="form-check-input" formControlName="categories"> Curbs
-                        </label>
-                    </div>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" formControlName="curbs">Curbs</label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" formControlName="rails">Rails</label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" formControlName="stairs">Stairs</label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" formControlName="plaza">Plaza</label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" formControlName="transition">Transition</label>
                 </div>
                 <button class="btn submitButtonDesign" (click)="submitFormValue()">Add spot</button>
             </div>

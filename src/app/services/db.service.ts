@@ -24,14 +24,13 @@ export class DbService {
 interface Spot {
   name: string,
   description: string,
-  categories: Category[]
+  categories: {
+    curbs: boolean,
+    rails: boolean,
+    stairs: boolean
+  }
 }
 
-interface Category {
-  curbs: boolean,
-  rails: boolean,
-  stairs: boolean
-}
 
 
 
