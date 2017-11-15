@@ -16,20 +16,22 @@ agm-map {
     background-color: rgba(172, 170, 170, 0.654);
     width: 15em;
     height: 2.5em;
-    position: absolute;
-     top: 1em;
-      left: 45%;
-       z-index: 1;
-       text-align: center;
+    position: relative;
+    bottom: 45vh;
+    z-index: 1;
+    text-align: center;
+    margin: auto;
+    
 }
 
 .filter{
-    border:solid 1px black;
+    border:solid 3px black;
     width: 8em;
     height: 10em;
-    position: absolute;
-    top:8em;
-    right:5%;
+    position: relative;
+    bottom: 37vh;
+    float: right;
+    /* margin-right: 5vh; */
     z-index: 1;
 }
 
