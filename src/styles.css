@@ -1,1 +1,36 @@
 @import "~bootstrap/dist/css/bootstrap.css";
+
+.well {
+    background-color: rgba(214, 93, 0, 0.7);
+    border-color: rgba(255, 255, 255, 0.7);
+    text-align: center;    
+    color: white;
+ }
+ 
+ .bg {
+    /* background-color: rgb(0, 0, 0); */
+    height: 100%;
+    width: 100%;
+ 
+    position: fixed;
+    padding-top: 3em;
+ 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+ }
+ 
+ .bgImg {
+    /* background-image: url("assets/images/backgroundImg.png"); */
+    filter: brightness(50%);
+ 
+    height: 100%;
+    width: 100%;
+ 
+    
+    position: fixed;
+ 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+ }
