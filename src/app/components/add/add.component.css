@@ -3,14 +3,6 @@ agm-map {
     /* display: flex; */
   }
 
-.formsContainer{
-    background-color: rgba(229, 229, 229, 0.7);
-    text-align: center;
-    border-radius: 10px;
-    padding: 25px;
-    width: 60%;
-}
-
 .buttonDesign{
     background-color: #d65d00;
     color: white;
@@ -21,20 +13,6 @@ agm-map {
     background-color: white;
     border: solid 1px #d65d00;
     color: #d65d00;
-}
-
-.submitButtonDesign:hover{
-    background-color: white;
-    border: solid 1px #d65d00;
-    color: #d65d00;
-}
-
-.submitButtonDesign{
-    background-color: rgb(214, 93, 0);
-    color: white;
-    margin-top: 20px;
-    padding-left: 50px;
-    padding-right: 50px;
 }
 
 .formStyle{

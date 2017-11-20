@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DbService } from '../../services/db.service';
 
 @Component({
   selector: 'app-browse',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BrowseComponent implements OnInit {
 
-  constructor() { }
+  allSpots: any;
+
+  constructor(private db: DbService) { }
 
   ngOnInit() {
+    this.db.getAllSpots().subscribe(result => {
+      this.allSpots = result;
+    })
   }
 
 }

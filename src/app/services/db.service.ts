@@ -19,6 +19,10 @@ export class DbService {
    public addSpot(spot: Spot) {
     this.databaseRef.push(spot);
   }
+
+  public getAllSpots() {
+    return this.afDb.list('spots').valueChanges();
+  }
 }
 
 interface Spot {
