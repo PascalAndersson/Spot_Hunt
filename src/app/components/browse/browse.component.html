@@ -18,26 +18,22 @@
         <div class="well header" style="text-align:center;">
           <b>Browse All Spots</b>
         </div>
-        <div class="well formsContainer" *ngFor="let spot of allSpots">
-          <div class="row">
-            <div class="col">
-              <b>{{spot.name}}</b>
-              <p>{{spot.description}}</p>
-              <p>{{spot.description}}</p>
-            </div>
-            <div class="col-2">
-              IMG PENDING
-            </div>
-            <div class="col-2">
-              MAP PENDING
+        <div class="spot-wrapper">
+          <div class="well formsContainer" *ngFor="let spot of allSpots">
+            <div class="row">
+              <div class="col">
+                <b>{{spot.name}}</b>
+                <p>{{spot.description}}</p>
+              </div>
+              <div class="col-2">
+                IMG PENDING
+              </div>
+              <div class="col-2">
+                MAP PENDING
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col" *ngFor="let spot of allSpots">
-        <pre>{{ spot | json }}</pre>
       </div>
     </div>
   </div>

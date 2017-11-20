@@ -1,25 +1,26 @@
 <div class="bgImg">
     <img routerLink="/" src="../../../assets/images/backgroundImg.png" alt="Picture didn't load..." />
 </div>
-<div class="container pt-5" align="center">
-    <div class="headerContainer">
-        <h4>Add Spot</h4>
-    </div>
-    <div class="formsContainer" style="width: 60%;">
-        <ng-template #content let-c="close" let-d="dismiss" style="width:50em">
-            <div class="modal-header">
-                <h4 class="modal-title">Modal title</h4>
-                <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <agm-map [latitude]="lat" [styles]="style" [longitude]="lng" [zoom]="zoom" [disableDefaultUI]=false (mapClick)="mapClicked($event)"
-                    [streetViewControl]=false [clickableIcons]=false>
-                    <agm-marker [longitude]="markerLng" [latitude]="markerLat" [iconUrl]="icon">
+<div class="container-fluid bg">
+    <div class="container pt-5" align="center">
+        <div class="headerContainer">
+            <h4>Add Spot</h4>
+        </div>
+        <div class="formsContainer" style="width: 60%;">
+            <ng-template #content let-c="close" let-d="dismiss" style="width:50em">
+                <div class="modal-header">
+                    <h4 class="modal-title">Modal title</h4>
+                    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <agm-map [latitude]="lat" [styles]="style" [longitude]="lng" [zoom]="zoom" [disableDefaultUI]=false (mapClick)="mapClicked($event)"
+                        [streetViewControl]=false [clickableIcons]=false>
+                        <agm-marker [longitude]="markerLng" [latitude]="markerLat" [iconUrl]="icon">
 
-                    </agm-marker>
-                    <!-- <agm-marker *ngFor="let m of markers; let i = index" (markerClick)="clickedMarker(m, i)" [iconUrl]="icon" [latitude]="m.lat"
+                        </agm-marker>
+                        <!-- <agm-marker *ngFor="let m of markers; let i = index" (markerClick)="clickedMarker(m, i)" [iconUrl]="icon" [latitude]="m.lat"
                             [longitude]="m.lng" [markerDraggable]="m.draggable" (dragEnd)="markerDragEnd(m, $event)">
                 
                             <agm-info-window>
@@ -27,50 +28,51 @@
                             </agm-info-window>
                 
                         </agm-marker> -->
-                </agm-map>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn buttonDesign" (click)="c('Close click')">Done!</button>
-            </div>
-        </ng-template>
-        <!-- End of modal -->
-        <form [formGroup]="addSpotFormGroup">
-            <div class="form-group">
-                <div class="row">
-                    <div class="col formStyle">
-                        <input class="form-control" formControlName="name" placeholder="Name" required/>
-                        <br>
-                        <input class="form-control" formControlName="description" placeholder="Description" />
-                        <br>
-                    </div>
-                    <div class="col">
-                        <button class="btn buttonDesign">Add picture(s)</button>
-                        <br>
-                        <!-- This is Loves work in progress  -->
-                        <button class="btn buttonDesign" (click)="open(content)">Select position</button>
-                    </div>
+                    </agm-map>
                 </div>
-                <span style="margin-right: 450px;">Category</span>
-                <div class="row" style="margin-left: 50px; margin-top: 10px;">
-                    <label class="checkbox-inline" style="margin-right: 20px;">
-                        <input type="checkbox" formControlName="curbs"> Curbs </label>
-                    <label class="checkbox-inline" style="margin-right: 20px;">
-                        <input type="checkbox" formControlName="rails"> Rails </label>
-                    <label class="checkbox-inline" style="margin-right: 20px;">
-                        <input type="checkbox" formControlName="stairs"> Stairs </label>
-                    <label class="checkbox-inline" style="margin-right: 20px;">
-                        <input type="checkbox" formControlName="plaza"> Plaza</label>
-                    <label class="checkbox-inline" style="margin-right: 20px;">
-                        <input type="checkbox" formControlName="transition"> Transition</label>
+                <div class="modal-footer">
+                    <button type="button" class="btn buttonDesign" (click)="c('Close click')">Done!</button>
                 </div>
-                <button class="btn submitButtonDesign" (click)="submitFormValue()" routerLink="/browse">Add spot</button>
-            </div>
-        </form>
-    </div>
-    <br>
-    <br>
-    <div class="col">
-        <pre style="color: white;">formgroup value: {{ addSpotFormGroup.value | json}}</pre>
-        <pre  style="color: white;">formgroup status: {{ addSpotFormGroup.status | json}}</pre>
+            </ng-template>
+            <!-- End of modal -->
+            <form [formGroup]="addSpotFormGroup">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col formStyle">
+                            <input class="form-control" formControlName="name" placeholder="Name" required/>
+                            <br>
+                            <input class="form-control" formControlName="description" placeholder="Description" />
+                            <br>
+                        </div>
+                        <div class="col">
+                            <button class="btn buttonDesign">Add picture(s)</button>
+                            <br>
+                            <!-- This is Loves work in progress  -->
+                            <button class="btn buttonDesign" (click)="open(content)">Select position</button>
+                        </div>
+                    </div>
+                    <span style="margin-right: 450px;">Category</span>
+                    <div class="row" style="margin-left: 50px; margin-top: 10px;">
+                        <label class="checkbox-inline" style="margin-right: 20px;">
+                            <input type="checkbox" formControlName="curbs"> Curbs </label>
+                        <label class="checkbox-inline" style="margin-right: 20px;">
+                            <input type="checkbox" formControlName="rails"> Rails </label>
+                        <label class="checkbox-inline" style="margin-right: 20px;">
+                            <input type="checkbox" formControlName="stairs"> Stairs </label>
+                        <label class="checkbox-inline" style="margin-right: 20px;">
+                            <input type="checkbox" formControlName="plaza"> Plaza</label>
+                        <label class="checkbox-inline" style="margin-right: 20px;">
+                            <input type="checkbox" formControlName="transition"> Transition</label>
+                    </div>
+                    <button class="btn submitButtonDesign" (click)="submitFormValue()" routerLink="/browse">Add spot</button>
+                </div>
+            </form>
+        </div>
+        <br>
+        <br>
+        <div class="col">
+            <pre style="color: white;">formgroup value: {{ addSpotFormGroup.value | json}}</pre>
+            <pre style="color: white;">formgroup status: {{ addSpotFormGroup.status | json}}</pre>
+        </div>
     </div>
 </div>
