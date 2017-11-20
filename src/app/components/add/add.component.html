@@ -5,7 +5,7 @@
     <div class="headerContainer">
         <h4>Add Spot</h4>
     </div>
-    <div class="formsContainer" style="width: 60%;">
+
         <form [formGroup]="addSpotFormGroup" novalidate>
             <div class="form-group">
                 <div class="row">
@@ -18,7 +18,8 @@
                     <div class="col">
                         <button class="btn buttonDesign">Add picture(s)</button>
                         <br>
-                        <button class="btn buttonDesign">Select position</button>
+                        <!-- This is Loves work in progress  -->
+                        <button class="btn buttonDesign" (click)="open(content)">Select position</button>
                     </div>
                 </div>
                 <label>Category</label>
