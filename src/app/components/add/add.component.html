@@ -34,11 +34,11 @@
             </div>
         </ng-template>
         <!-- End of modal -->
-        <form [formGroup]="addSpotFormGroup" novalidate>
+        <form [formGroup]="addSpotFormGroup">
             <div class="form-group">
                 <div class="row">
                     <div class="col formStyle">
-                        <input class="form-control" formControlName="name" placeholder="Name" />
+                        <input class="form-control" formControlName="name" placeholder="Name" required/>
                         <br>
                         <input class="form-control" formControlName="description" placeholder="Description" />
                         <br>
@@ -50,27 +50,27 @@
                         <button class="btn buttonDesign" (click)="open(content)">Select position</button>
                     </div>
                 </div>
-                <label>Category</label>
-                <div class="row">
-                    <label class="checkbox-inline">
-                        <input type="checkbox" formControlName="curbs">Curbs</label>
-                    <label class="checkbox-inline">
-                        <input type="checkbox" formControlName="rails">Rails</label>
-                    <label class="checkbox-inline">
-                        <input type="checkbox" formControlName="stairs">Stairs</label>
-                    <label class="checkbox-inline">
-                        <input type="checkbox" formControlName="plaza">Plaza</label>
-                    <label class="checkbox-inline">
-                        <input type="checkbox" formControlName="transition">Transition</label>
+                <span style="margin-right: 450px;">Category</span>
+                <div class="row" style="margin-left: 50px; margin-top: 10px;">
+                    <label class="checkbox-inline" style="margin-right: 20px;">
+                        <input type="checkbox" formControlName="curbs"> Curbs </label>
+                    <label class="checkbox-inline" style="margin-right: 20px;">
+                        <input type="checkbox" formControlName="rails"> Rails </label>
+                    <label class="checkbox-inline" style="margin-right: 20px;">
+                        <input type="checkbox" formControlName="stairs"> Stairs </label>
+                    <label class="checkbox-inline" style="margin-right: 20px;">
+                        <input type="checkbox" formControlName="plaza"> Plaza</label>
+                    <label class="checkbox-inline" style="margin-right: 20px;">
+                        <input type="checkbox" formControlName="transition"> Transition</label>
                 </div>
-                <button class="btn submitButtonDesign" (click)="submitFormValue()">Add spot</button>
+                <button class="btn submitButtonDesign" (click)="submitFormValue()" routerLink="/browse">Add spot</button>
             </div>
         </form>
     </div>
-    <!-- <br>
+    <br>
     <br>
     <div class="col">
-        <pre>formgroup value: {{ addSpotFormGroup.value | json}}</pre>
-        <pre>formgroup status: {{ addSpotFormGroup.status | json}}</pre>
-    </div> -->
+        <pre style="color: white;">formgroup value: {{ addSpotFormGroup.value | json}}</pre>
+        <pre  style="color: white;">formgroup status: {{ addSpotFormGroup.status | json}}</pre>
+    </div>
 </div>
