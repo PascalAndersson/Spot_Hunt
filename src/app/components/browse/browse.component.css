@@ -9,5 +9,11 @@
  }
 
  .spot-wrapper{
-     margin-bottom: 150px;
+     margin-bottom: 150px;  
  }
+
+ .btn {
+    background-color: rgba(214, 93, 0, 1.0);
+    color: white;
+    float: right;
+}
