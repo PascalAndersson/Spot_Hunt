@@ -31,7 +31,7 @@ export class AddComponent implements OnInit {
 
 
   icon: object = {
-    url: 'assets/SpotHuntPin.png', // gives a data://<value>
+    url: 'assets/SpotHuntPin2.png', // gives a data://<value>
     scaledSize: {
       height: 30,
       width: 30
@@ -93,8 +93,21 @@ export class AddComponent implements OnInit {
 
 
 
-  ngOnInit() {
-  }
+  ngOnInit() { 
+       // Center map on the users current position
+       this.setCurrentPosition();
+     } 
+    
+     private setCurrentPosition() {
+       if ("geolocation" in navigator) {
+         navigator.geolocation.getCurrentPosition((position) => {
+           this.markerLat = position.coords.latitude;
+           this.lat = position.coords.latitude;
+           this.markerLng = position.coords.longitude;
+           this.lng = position.coords.longitude;
+         });
+       }
+     }
 
   submitFormValue() {
     this.newSpot = this.addSpotFormGroup.value;

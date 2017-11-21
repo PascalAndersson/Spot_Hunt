@@ -49,4 +49,5 @@ margin-right: 2em;
 .orange:hover{
     color:#D55B1B;
     background-color: white;
+    border: solid 1px #d65d00;
 }
