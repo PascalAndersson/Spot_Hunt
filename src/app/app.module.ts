@@ -30,7 +30,7 @@ const appRouts = [
   { path: '', component: HomeComponent },
   { path: 'browse', component: BrowseComponent },
   { path: 'add', component: AddComponent },
-  { path: 'details', component: DetailsComponent },
+  { path: 'details/:key', component: DetailsComponent },
 ]
 
 @NgModule({

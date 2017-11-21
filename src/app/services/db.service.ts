@@ -6,7 +6,7 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class DbService {
 
-  databaseRef: AngularFireList<Spot>;
+  databaseRef: AngularFireList<any>;
   firebase: any;
 
   constructor(
@@ -16,24 +16,27 @@ export class DbService {
     this.firebase = firebase;
    }
 
-   public addSpot(spot: Spot) {
+   public addSpot(spot: any) {
     this.databaseRef.push(spot);
   }
 
   public getAllSpots() {
     return this.afDb.list('spots').valueChanges();
   }
-}
 
-interface Spot {
-  name: string,
-  description: string,
-  categories: {
-    curbs: boolean,
-    rails: boolean,
-    stairs: boolean
+  public getSpotsIncludingKey(){
+    return this.databaseRef.snapshotChanges().map( changes => {
+      return changes.map( c => ({
+        key: c.payload.key, ...c.payload.val()
+      }));
+    });
+  }
+
+  public getSpotByKey(key: string) {
+    return this.afDb.object('spots/' + key).valueChanges();
   }
 }
+
 
 
 
