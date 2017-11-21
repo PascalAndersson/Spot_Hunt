@@ -1,39 +1,65 @@
 <div class="bgImg" style="z-index: -1;">
   <img routerLink="/" src="../../../assets/images/backgroundImg.png" alt="Picture didn't load..." />
 </div>
-<header class="headerContainer">
-  <h1>Stockholm Skate</h1>
-</header>
-<div class="container">
-  <ngb-carousel class="ngb-carousel">
-    <ng-template ngbSlide>
-      <img src="../assets/images/skatespot.jpg" alt="Random first slide">
-      <div class="carousel-caption">
+<div class="container-fluid bg" style="padding-bottom: 150px;">
+  <div class="container" align="center">
+    <div class="headerContainerDetails">
+      <h4>Details "spot.name"</h4>
+    </div>
+    <div class="formsContainer">
+      <div class="col">
+        <ngb-carousel class="ngb-carousel">
+          <ng-template ngbSlide>
+            <img src="../assets/images/skatespot.jpg" alt="Random first slide">
+            <div class="carousel-caption">
+            </div>
+          </ng-template>
+          <ng-template ngbSlide>
+            <img src="../assets/images/skatespot3.jpg" alt="Random second slide">
+            <div class="carousel-caption">
+            </div>
+          </ng-template>
+          <ng-template ngbSlide>
+            <img src="../assets/images/skatespot2.jpg" alt="Random third slide">
+          </ng-template>
+        </ngb-carousel>
+        <div class="row mt-5">
+          <div class="col" style="text-align: left;">
+            <p>Description:</p>
+            <div class="descriptionArea">
+              <p>Yolomackswag</p>
+            </div>
+            <div class="row">
+              <p>Type:</p>
+              <p class="typeClass">Curbs</p>
+              <p class="typeClass">Plaza</p>
+              <p class="typeClass">Ledges</p>
+            </div>
+          </div>
+          <div class="col-9">
+            <p>Location:</p>
+          </div>
+        </div>
       </div>
-    </ng-template>
-    <ng-template ngbSlide>
-      <img src="../assets/images/skatespot3.jpg" alt="Random second slide">
-      <div class="carousel-caption">
-      </div>
-    </ng-template>
-    <ng-template ngbSlide>
-      <img src="../assets/images/skatespot2.jpg" alt="Random third slide">
-      <div class="carousel-caption">
-      </div>
-    </ng-template>
-  </ngb-carousel>
+    </div>
+  </div>
+</div>
+
+
+<!-- <div>
   <table>
     <tr class="tableClass">
       <th>Description: </th>
       <th>Location: </th>
     </tr>
     <tr>
-      <td class="descriptionClass">Skate skejt yo yo kickflip! Skate skejt yo yo kickflip! Skate skejt yo yo kickflip! Skate skejt yo yo kickflip! Skate skejt yo yo kickflip!</td>
+      <td class="descriptionClass">Skate skejt yo yo kickflip! Skate skejt yo yo kickflip! Skate skejt yo yo kickflip! Skate skejt yo yo kickflip! Skate
+        skejt yo yo kickflip!</td>
       <td></td>
     </tr>
   </table>
   <table>
-    
+
     <tr>
       <th>Type: </th>
       <td class="typeClass">Curbs</td>
@@ -41,4 +67,4 @@
       <td class="typeClass">Ledges</td>
     </tr>
   </table>
-</div>
+</div> -->
