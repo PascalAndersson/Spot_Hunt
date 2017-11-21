@@ -6,32 +6,38 @@
              </div> -->
 
 
-             <div class="wrapper">
-                <agm-map [latitude]="lat" [styles]="style" [longitude]="lng" [zoom]="zoom" [disableDefaultUI]=false (mapClick)="mapClicked($event)">
-                    <agm-marker *ngFor="let m of filteredMarkers; let i = index" (markerClick)="clickedMarker(m, i)" [iconUrl]="icon" [latitude]="m.lat"
-                    [longitude]="m.lng" [markerDraggable]="m.draggable" (dragEnd)="markerDragEnd(m, $event)">
-                    <agm-info-window>
-                        {{m.name}}
-                    </agm-info-window>
-                </agm-marker>
-             </agm-map>
-             <input type="text" class="searchbar" (input)="filterMarkersNameSearch($event)" />
-             <div class="filter">
-                <div class="filter-header">
-                    <h4>Filter spots</h4>
-                </div>
-                <div class="filter-body">
-                    <p>Rails</p>
-                    <p>Ledge</p>
-                    <p>Plaza</p>
-                    <div class="checkbox">
-                        <label>
-                          <input type="checkbox" ng-model="oneAtATime">
-                          Open only one at a time
-                        </label>
-                      </div>
-                </div>
-             </div>
-             </div>
-             <!-- </div> -->
-             <!-- </div> -->
+<div class="wrapper">
+    <agm-map  [latitude]="lat" [styles]="style" [longitude]="lng" [zoom]="zoom" [disableDefaultUI]=false (mapClick)="mapClicked()">
+        <agm-marker *ngFor="let m of spots; let i = index" (markerClick)="clickedMarker(m, i)" [iconUrl]="icon" [latitude]="m.lat"
+            [longitude]="m.lng" [markerDraggable]="m.draggable" (dragEnd)="markerDragEnd(m, $event)">
+            <agm-info-window>
+                {{m.name}}
+            </agm-info-window>
+        </agm-marker>
+    </agm-map>
+    <div class="search-container">
+        <input type="text" class="searchbar" (click)="showSearchResults()" (input)="searchSpots($event)" />
+        <div class="search-result" [ngClass]="{visable: isVisable}">
+            <div *ngFor="let s of searchResult; let i = index">
+                <h6 routerLink="/browse" class="search-spot-to-details">{{s.name}}</h6>
+            </div>
+        </div>
+    </div>
+    <div class="filter">
+        <div class="filter-header">
+            <h4>Filter spots</h4>
+        </div>
+        <div class="filter-body">
+            <p>Rails</p>
+            <p>Ledge</p>
+            <p>Plaza</p>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" ng-model="oneAtATime"> Open only one at a time
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- </div> -->
+<!-- </div> -->
