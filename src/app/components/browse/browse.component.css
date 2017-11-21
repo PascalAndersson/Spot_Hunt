@@ -17,3 +17,8 @@
     color: white;
     float: right;
 }
+
+.btn:hover {
+    background-color: rgba(214, 93, 0, 1.0);
+    color: white;
+}

@@ -15,7 +15,9 @@ export class BrowseComponent implements OnInit {
   ngOnInit() {
     this.db.getAllSpots().subscribe(result => {
       this.allSpots = result;
-    })
+      this.allSpots = this.db.getSpotsIncludingKey();
+      console.log(this.allSpots);
+    });
   }
 
 }

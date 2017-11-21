@@ -19,9 +19,10 @@
           <b>Browse All Spots</b>
         </div>
         <div class="spot-wrapper">
-          <div class="well formsContainer" *ngFor="let spot of allSpots">
+          <div class="well formsContainer" *ngFor="let spot of allSpots | async">
             <div class="row">
               <div class="col">
+                <b>{{spot.key}}</b>
                 <b>{{spot.name}}</b>
                 <p>{{spot.description}}</p>
               </div>
@@ -33,7 +34,7 @@
               </div>
             </div>
             <div style="width: 108%">
-                <button type="button" class="btn">Details</button>
+                <button type="button" class="btn" [routerLink]="['/details/' ,spot.key]">Details</button>
             </div>
           </div>
         </div>
