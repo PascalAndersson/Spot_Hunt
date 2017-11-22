@@ -60,3 +60,13 @@
     padding: 25px;
     margin-bottom: 15px;
 }
+
+.typeClass{
+    margin: auto;
+    margin-left: 20px;
+    background-color: rgb(214, 93, 0);
+    color: white;
+    border-radius: 10px;
+    border: solid 1px lightgrey;
+    padding: 7px;
+}

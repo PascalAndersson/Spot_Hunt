@@ -27,14 +27,13 @@
           <div class="col" style="text-align: left;">
             <h4>Description:</h4> 
               <p>{{spot.description}}</p>
-            <div class="row">
+            <div class="row ml-1">
               <h4>Type:</h4>
               <span *ngIf="spot.stairs == true"><p class="typeClass">Stairs</p></span>
               <span *ngIf="spot.plaza == true"><p class="typeClass">Plaza</p></span>
               <span *ngIf="spot.rails == true"><p class="typeClass">Rails</p></span>
               <span *ngIf="spot.transition == true"><p class="typeClass">Transition</p></span>
               <span *ngIf="spot.curbs == true"><p class="typeClass">Curbs</p></span>
-
             </div>
           </div>
           <div class="col-9">
