@@ -21,6 +21,7 @@ export class AddComponent implements OnInit {
     this.http.get('assets/google-maps-design.json')
       .subscribe(res => this.style = res.json());
   }
+
   // Set custom style
   style: object = []
 
@@ -29,7 +30,7 @@ export class AddComponent implements OnInit {
   lat: number = 59.315305976994274;
   lng: number = 18.079376220703125;
 
-
+  // Marker design
   icon: object = {
     url: 'assets/SpotHuntPin2.png', // gives a data://<value>
     scaledSize: {
@@ -38,13 +39,9 @@ export class AddComponent implements OnInit {
     }
   }
 
+  // Marker position variables
   markerLat;
   markerLng;
-
-  // marker: object = {
-  //   lat: null,
-  //   lng: null,
-  // };
 
   mapClicked($event) {
     console.log("lat: " + $event.coords.lat + " | lng: " + $event.coords.lng);
@@ -55,9 +52,7 @@ export class AddComponent implements OnInit {
   }
 
 
-  // This string does something with the modal x'DDD
   closeResult: string;
-
 
   open(content) {
     this.modalService.open(content).result.then((result) => {
@@ -77,6 +72,8 @@ export class AddComponent implements OnInit {
     }
   }
 
+
+  // Reactive forms
   addSpotFormGroup = new FormGroup({
     name: new FormControl(),
     lat: new FormControl(),
@@ -89,29 +86,25 @@ export class AddComponent implements OnInit {
     transition: new FormControl(false)
   });
 
-  newSpot: any;
+  ngOnInit() {
+    // Center map on the users current position
+    this.setCurrentPosition();
+  }
 
-
-
-  ngOnInit() { 
-       // Center map on the users current position
-       this.setCurrentPosition();
-     } 
-    
-     private setCurrentPosition() {
-       if ("geolocation" in navigator) {
-         navigator.geolocation.getCurrentPosition((position) => {
-           this.markerLat = position.coords.latitude;
-           this.lat = position.coords.latitude;
-           this.markerLng = position.coords.longitude;
-           this.lng = position.coords.longitude;
-         });
-       }
-     }
+  private setCurrentPosition() {
+    if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        this.markerLat = position.coords.latitude;
+        this.lat = position.coords.latitude;
+        this.markerLng = position.coords.longitude;
+        this.lng = position.coords.longitude;
+      });
+    }
+  }
 
   submitFormValue() {
-    this.newSpot = this.addSpotFormGroup.value;
-    this.dbService.addSpot(this.newSpot);
+    var newSpot = this.addSpotFormGroup.value;
+    this.dbService.addSpot(newSpot);
   }
 }
 

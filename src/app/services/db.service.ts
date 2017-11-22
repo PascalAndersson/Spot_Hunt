@@ -7,6 +7,7 @@ import { Observable } from 'rxjs/Observable';
 export class DbService {
   databaseRef: AngularFireList<any>;
   firebase: any;
+
   constructor(
     private afDb: AngularFireDatabase
   ) {
@@ -16,12 +17,13 @@ export class DbService {
   public addSpot(spot: any) {
     this.databaseRef.push(spot);
   }
+
+  // Get all props but the object key
   public getAllSpots() {
     return this.databaseRef.valueChanges();
   }
-  public getSpotsIncludingKey() {
+  public getSpotKey() {
     return this.databaseRef.snapshotChanges();
-
   }
   public getSpotByKey(key: string) {
     return this.afDb.object('spots/' + key).valueChanges();

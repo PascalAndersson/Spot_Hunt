@@ -11,11 +11,14 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class BrowseComponent implements OnInit {
   allSpots: any;
   constructor(private db: DbService) { }
+
   ngOnInit() {
     var keys;
+
+    // Get all spot and their key
     this.db.getAllSpots().subscribe(result => {
       this.allSpots = result;
-      this.db.getSpotsIncludingKey().subscribe(res => {
+      this.db.getSpotKey().subscribe(res => {
         keys = res;
         this.allSpots.forEach(function (spot, index) {
           spot.key = keys[index].key;

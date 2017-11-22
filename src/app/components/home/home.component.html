@@ -4,35 +4,40 @@
             <agm-marker *ngFor="let m of spots; let i = index" (markerClick)="clickedMarker(m, i)" [iconUrl]="icon" [latitude]="m.lat"
                 [longitude]="m.lng" [markerDraggable]="m.draggable" (dragEnd)="markerDragEnd(m, $event)">
                 <agm-info-window>
-                    {{m.name}}
+                    <a  [routerLink]="['/details/' ,m.key]"> {{m.name}} </a>
                 </agm-info-window>
             </agm-marker>
         </agm-marker-cluster>
     </agm-map>
+
     <div class="search-container">
         <input type="text" class="searchbar" (click)="showSearchResults()" (input)="searchSpots($event)" />
+
+        <!-- ngClass -->
         <div class="search-result" [ngClass]="{visable: isVisable}">
             <div *ngFor="let s of searchResult; let i = index">
                 <h6 [routerLink]="['/details/' ,s.key]" class="search-spot-to-details">{{s.name}}</h6>
             </div>
         </div>
     </div>
-    <!-- <div class="filter">
-        <div class="filter-header">
-            <h4>Filter spots</h4>
-        </div>
-        <div class="filter-body">
-            <p>Rails</p>
-            <p>Ledge</p>
-            <p>Plaza</p>
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox" ng-model="oneAtATime"> Open only one at a time
-                </label>
-            </div>
-        </div>
-    </div> -->
 </div>
-<!-- </div> -->
-<!-- </div> -->
 
+
+
+
+
+<!-- <div class="filter">
+    <div class="filter-header">
+        <h4>Filter spots</h4>
+    </div>
+    <div class="filter-body">
+        <p>Rails</p>
+        <p>Ledge</p>
+        <p>Plaza</p>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" ng-model="oneAtATime"> Open only one at a time
+            </label>
+        </div>
+    </div>
+</div> -->

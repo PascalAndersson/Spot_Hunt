@@ -7,6 +7,8 @@
             <h4>Add Spot</h4>
         </div>
         <div class="formsContainer" style="width: 60%;">
+
+            <!-- Modal for adding position on google maps -->
             <ng-template #content let-c="close" let-d="dismiss" style="width:50em">
                 <div class="modal-header">
                     <h4 class="modal-title">Modal title</h4>
@@ -18,23 +20,17 @@
                     <agm-map [latitude]="lat" [styles]="style" [longitude]="lng" [zoom]="zoom" [disableDefaultUI]=false (mapClick)="mapClicked($event)"
                         [streetViewControl]=false [clickableIcons]=false>
                         <agm-marker [longitude]="markerLng" [latitude]="markerLat" [iconUrl]="icon">
-
                         </agm-marker>
-                        <!-- <agm-marker *ngFor="let m of markers; let i = index" (markerClick)="clickedMarker(m, i)" [iconUrl]="icon" [latitude]="m.lat"
-                            [longitude]="m.lng" [markerDraggable]="m.draggable" (dragEnd)="markerDragEnd(m, $event)">
-                
-                            <agm-info-window>
-                                {{m.name}}
-                            </agm-info-window>
-                
-                        </agm-marker> -->
                     </agm-map>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn buttonDesign" (click)="c('Close click')">Done!</button>
                 </div>
             </ng-template>
-            <!-- End of modal -->
+            <!-- End of modal  -->
+
+
+            <!-- Reactive forms -->
             <form [formGroup]="addSpotFormGroup">
                 <div class="form-group">
                     <div class="row">
@@ -47,7 +43,6 @@
                         <div class="col">
                             <button class="btn buttonDesign">Add picture(s)</button>
                             <br>
-                            <!-- This is Loves work in progress  -->
                             <button class="btn buttonDesign" (click)="open(content)">Select position</button>
                         </div>
                     </div>
@@ -67,6 +62,8 @@
                     <button class="btn submitButtonDesign" (click)="submitFormValue()" routerLink="/browse">Add spot</button>
                 </div>
             </form>
+            <!-- end of from -->
+
         </div>
         <br>
         <br>
