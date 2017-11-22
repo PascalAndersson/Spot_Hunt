@@ -20,7 +20,7 @@ agm-map {
 
 .searchbar{
     width: 100%;
-    border:solid 1px black;
+    border:solid 1px lightgray;
     border-radius: 10px;
     background-color: rgba(220, 218, 218, 0.9);
     height: 2.5em;
@@ -29,7 +29,7 @@ agm-map {
 
 .search-result{
     visibility: hidden;
-    border:solid 1px black;
+    border:solid 1px lightgray;
     border-radius: 10px;
     margin-top:2%;
     width: 100%;

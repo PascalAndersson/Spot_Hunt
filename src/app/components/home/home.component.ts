@@ -25,8 +25,17 @@ export class HomeComponent implements OnInit {
       this.isVisable = false;
     }
   }
-  
-  mapClicked(){
+
+  // styles: any = [{
+  //   url: "../../assets/images/skatespot3.jpg",
+  //   width:60,
+  //   height:60,
+  //   textColor: 'white',
+  //   textSize: 14,
+  //   fontFamily: 'Open Sans'
+  // }];
+
+  mapClicked() {
     this.isVisable = false;
   }
 
@@ -42,15 +51,15 @@ export class HomeComponent implements OnInit {
   icon: object = {
     url: 'assets/SpotHuntPin2.png', // gives a data://<value>
     scaledSize: {
-      height: 30,
+      height: 40,
       width: 30
     }
   }
 
   //Set starting position and zoom level
   zoom: number = 12;
-  lat: number = 59.315305976994274;
-  lng: number = 18.079376220703125;
+  lat: number;
+  lng: number;
 
   // Set custom style
   style: object = []
@@ -62,8 +71,16 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     // Center map on the users current position
     this.setCurrentPosition();
+    var keys;
     this.db.getAllSpots().subscribe(result => {
       this.spots = result;
+
+      this.db.getSpotsIncludingKey().subscribe(res => {
+        keys = res;
+        this.spots.forEach(function (spot, index) {
+          spot.key = keys[index].key;
+        })
+      })
     })
   }
 
@@ -85,6 +102,10 @@ export class HomeComponent implements OnInit {
         this.lat = position.coords.latitude;
         this.lng = position.coords.longitude;
       });
+    }
+    else {
+      this.lat = 59.315305976994274;
+      this.lng = 18.079376220703125;
     }
   }
 

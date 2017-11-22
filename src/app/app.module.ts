@@ -19,6 +19,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 
 // Google maps
 import { AgmCoreModule } from '@agm/core';
+import { AgmJsMarkerClustererModule } from '@agm/js-marker-clusterer';
 
 // Read JSON
 import { HttpModule } from '@angular/http';
@@ -53,7 +54,8 @@ const appRouts = [
     HttpModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBLa5xPtfsWZK_ZNROM9e6hvQ3mkNrbTzQ'
-    })
+    }),
+    AgmJsMarkerClustererModule
   ],
   providers: [
     DbService
