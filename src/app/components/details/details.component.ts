@@ -21,10 +21,12 @@ export class DetailsComponent implements OnInit {
   }
 
   key: string;
+  spot: any;
 
   ngOnInit() {
     this.key = this.activatedRoute.snapshot.params['key'];
-    console.log(this.key);
+    this.dbService.getSpotByKey(this.key).subscribe(spot => {
+      this.spot = spot;
+    })
   }
-
 }

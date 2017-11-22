@@ -4,7 +4,7 @@
 <div class="container-fluid bg" style="padding-bottom: 150px;">
   <div class="container" align="center">
     <div class="headerContainerDetails">
-      <h4>Details "spot.name"</h4>
+      <h2>{{spot.name}}</h2>
     </div>
     <div class="formsContainer">
       <div class="col">
@@ -25,19 +25,20 @@
         </ngb-carousel>
         <div class="row mt-5">
           <div class="col" style="text-align: left;">
-            <p>Description:</p>
-            <div class="descriptionArea">
-              <p>Yolomackswag</p>
-            </div>
+            <h4>Description:</h4> 
+              <p>{{spot.description}}</p>
             <div class="row">
-              <p>Type:</p>
-              <p class="typeClass">Curbs</p>
-              <p class="typeClass">Plaza</p>
-              <p class="typeClass">Ledges</p>
+              <h4>Type:</h4>
+              <span *ngIf="spot.stairs == true"><p class="typeClass">Stairs</p></span>
+              <span *ngIf="spot.plaza == true"><p class="typeClass">Plaza</p></span>
+              <span *ngIf="spot.rails == true"><p class="typeClass">Rails</p></span>
+              <span *ngIf="spot.transition == true"><p class="typeClass">Transition</p></span>
+              <span *ngIf="spot.curbs == true"><p class="typeClass">Curbs</p></span>
+
             </div>
           </div>
           <div class="col-9">
-            <p>Location:</p>
+            <h4>Location:</h4>
           </div>
         </div>
       </div>
