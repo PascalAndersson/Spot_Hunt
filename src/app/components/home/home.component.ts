@@ -52,8 +52,8 @@ export class HomeComponent implements OnInit {
 
   //Set starting position and zoom level
   zoom: number = 12;
-  lat: number;
-  lng: number;
+  lat: number = 59.315305976994274;
+  lng: number = 18.079376220703125;
 
   spots: any;
 
@@ -96,10 +96,5 @@ export class HomeComponent implements OnInit {
         this.lng = position.coords.longitude;
       });
     }
-    else {
-      this.lat = 59.315305976994274;
-      this.lng = 18.079376220703125;
-    }
   }
-
 }
