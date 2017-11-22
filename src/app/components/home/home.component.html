@@ -7,23 +7,25 @@
 
 
 <div class="wrapper">
-    <agm-map  [latitude]="lat" [styles]="style" [longitude]="lng" [zoom]="zoom" [disableDefaultUI]=false (mapClick)="mapClicked()">
-        <agm-marker *ngFor="let m of spots; let i = index" (markerClick)="clickedMarker(m, i)" [iconUrl]="icon" [latitude]="m.lat"
-            [longitude]="m.lng" [markerDraggable]="m.draggable" (dragEnd)="markerDragEnd(m, $event)">
-            <agm-info-window>
-                {{m.name}}
-            </agm-info-window>
-        </agm-marker>
+    <agm-map [latitude]="lat" [styles]="style" [longitude]="lng" [zoom]="zoom" [disableDefaultUI]=false (mapClick)="mapClicked()">
+        <agm-marker-cluster [imagePath]="'//cdn.rawgit.com/mahnunchik/markerclustererplus/master/images/m'" [maxZoom]="10">
+            <agm-marker *ngFor="let m of spots; let i = index" (markerClick)="clickedMarker(m, i)" [iconUrl]="icon" [latitude]="m.lat"
+                [longitude]="m.lng" [markerDraggable]="m.draggable" (dragEnd)="markerDragEnd(m, $event)">
+                <agm-info-window>
+                    {{m.name}}
+                </agm-info-window>
+            </agm-marker>
+        </agm-marker-cluster>
     </agm-map>
     <div class="search-container">
         <input type="text" class="searchbar" (click)="showSearchResults()" (input)="searchSpots($event)" />
         <div class="search-result" [ngClass]="{visable: isVisable}">
             <div *ngFor="let s of searchResult; let i = index">
-                <h6 routerLink="/browse" class="search-spot-to-details">{{s.name}}</h6>
+                <h6 [routerLink]="['/details/' ,s.key]" class="search-spot-to-details">{{s.name}}</h6>
             </div>
         </div>
     </div>
-    <div class="filter">
+    <!-- <div class="filter">
         <div class="filter-header">
             <h4>Filter spots</h4>
         </div>
@@ -37,7 +39,7 @@
                 </label>
             </div>
         </div>
-    </div>
+    </div> -->
 </div>
 <!-- </div> -->
 <!-- </div> -->
